@@ -1,4 +1,4 @@
-# Manjaro XFCE Editions
+# Manjaro Gnome Editions
 [![iso_build](https://github.com/manjaro-gnome/download/workflows/iso_build/badge.svg)](https://github.com/manjaro-gnome/download/actions)
 
 ## description
