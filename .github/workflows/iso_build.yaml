@@ -72,6 +72,10 @@ jobs:
           -v $PWD/iso:/var/cache/manjaro-tools/iso \
           -t manjarosway/manjaro-iso
           
+          docker stop $(docker ps -a -q)
+          docker rm -vf $(docker ps -a -q)
+          docker rmi -f $(docker images -a -q)
+          
           FILE_PATH=$(find ./iso -type f -name "*.iso" -exec stat -c '%Y %n' {} \; | sort -nr | awk 'NR==1 {print $2}')
           zip -s 1650m $(basename $FILE_PATH).zip $FILE_PATH
           ls -lasih .
