@@ -73,7 +73,8 @@ jobs:
           -t manjarosway/manjaro-iso
           
           FILE_PATH=$(find ./iso -type f -name "*.iso" -exec stat -c '%Y %n' {} \; | sort -nr | awk 'NR==1 {print $2}')
-          zip -s 1720m $(basename $FILE_PATH).zip $FILE_PATH
+          zip -s 1650m $(basename $FILE_PATH).zip $FILE_PATH
+          ls -lasih .
           sha256sum $(basename $FILE_PATH).z* > $(basename $FILE_PATH).sha256
 
           echo "FILE_PATH=$(basename $FILE_PATH)" >> $GITHUB_ENV
