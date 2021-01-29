@@ -36,7 +36,7 @@ jobs:
     needs: prepare_release
     strategy:
       matrix:
-        EDITION: [gnome-next]
+        EDITION: [gnome,gnome-next]
         BRANCH: [unstable]
         SCOPE: [minimal]
     steps:
@@ -48,7 +48,7 @@ jobs:
         name: checkout
         uses: actions/checkout@v2
         with:
-          repository: manjaro-plasma/iso-profiles
+          repository: manjaro-gnome/iso-profiles
           token: "${{ secrets.GITHUB_TOKEN }}"
           path: 'iso-profiles'
       -
