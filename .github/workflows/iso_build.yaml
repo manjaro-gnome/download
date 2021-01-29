@@ -77,7 +77,7 @@ jobs:
           docker rmi -f $(docker images -a -q)
           
           FILE_PATH=$(find ./iso -type f -name "*.iso" -exec stat -c '%Y %n' {} \; | sort -nr | awk 'NR==1 {print $2}')
-          zip -s 1650m $(basename $FILE_PATH).zip $FILE_PATH
+          zip -s 1950m $(basename $FILE_PATH).zip $FILE_PATH
           ls -lasih .
           sha256sum $(basename $FILE_PATH).z* > $(basename $FILE_PATH).sha256
 
@@ -103,7 +103,7 @@ jobs:
         uses: andstor/file-existence-action@v1
         with:
           files: ${{ env.FILE_PATH }}.z01
-          allow_failure: true
+        allow_failure: true
       - 
         id: upload_release_z01
         uses: actions/upload-release-asset@v1
