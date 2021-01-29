@@ -3,7 +3,7 @@
 
 ## description
 
-Development branch for Gnome Edition of Manjaro Linux
+Development branch for Gnome Edition of Manjaro Linux. These are daily builds for testing purposes and not fit for production.
 
 ## where can I download an iso?
 
@@ -25,3 +25,5 @@ Images are build and uploaded in a relatively regular interval to [github releas
 user: manjaro
 password: manjaro
 ```
+## Extracting
+The isos bigger than certain threshold are provided in multipart zip files because of the filesize restriction of github. To extract the iso, download all the zipped parts, and open the zip file with file-roller, engrampa or 7z. This should automatically extract the iso from all the files.
