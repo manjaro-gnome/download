@@ -103,6 +103,7 @@ jobs:
         uses: andstor/file-existence-action@v1
         with:
           files: ${{ env.FILE_PATH }}.z01
+          allow_failure: true
       - 
         id: upload_release_z01
         uses: actions/upload-release-asset@v1
