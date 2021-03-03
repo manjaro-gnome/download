@@ -36,7 +36,7 @@ jobs:
     needs: prepare_release    
     strategy:
       matrix:
-        EDITION: [gnome,gnome-next]
+        EDITION: [gnome]
         BRANCH: [unstable]
         SCOPE: [minimal,full]
     steps:
