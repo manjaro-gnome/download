@@ -1,4 +1,4 @@
-name: iso_build_testing
+name: iso_build_staging
 on:
   workflow_dispatch:
   schedule:
@@ -37,7 +37,7 @@ jobs:
     strategy:
       matrix:
         EDITION: [gnome]
-        BRANCH: [testing]
+        BRANCH: [stable-staging]
         SCOPE: [minimal,full]
     steps:
       - 
