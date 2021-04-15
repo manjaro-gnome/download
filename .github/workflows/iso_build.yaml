@@ -165,7 +165,7 @@ jobs:
           [ "$SCOPE" == "minimal" ] && unset SCOPE
           
           KERNEL=linux510
-          CODE_NAME="Nightly Build"
+          CODE_NAME="Nightly-Build"
           
           sudo sed -i -e 's|dist_name=$(get_distname)|dist_name=Manjaro|g' /usr/lib/manjaro-tools/util.sh
           sudo sed -i -e 's|iso_name=$(get_osid)|iso_name=manjaro|g' /usr/lib/manjaro-tools/util.sh
