@@ -24,8 +24,8 @@ jobs:
     needs: [prepare-release]
     strategy:
       matrix:
-        EDITION: [gnome]
-        BRANCH: [unstable]
+        EDITION: [gnome, manjaro-architect]
+        BRANCH: [unstable, stable]
         SCOPE: [full, minimal]
     steps:
       - 
