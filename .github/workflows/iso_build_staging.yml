@@ -39,7 +39,7 @@ jobs:
           format: 'YY.MM'   
       -
         name: image-build-upload
-        uses: manjaro/manjaro-iso-action@v2.4
+        uses: manjaro/manjaro-iso-action@v2.6
         with:
           iso-profiles-repo: https://github.com/Manjaro-Sway/iso-profiles
           edition: ${{ matrix.edition }}
