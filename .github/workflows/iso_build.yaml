@@ -45,7 +45,7 @@ jobs:
           branch: ${{ matrix.branch }}
           scope: ${{ matrix.scope }}
           version: ${{ steps.time.outputs.time }}-development
-          kernel: linux616
+          kernel: linux617
           code-name: "Nightly-Build"
           release-tag: ${{ needs.prepare-release.outputs.release_tag }}
       -
