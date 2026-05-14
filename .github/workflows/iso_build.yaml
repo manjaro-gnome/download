@@ -25,8 +25,9 @@ jobs:
     strategy:
       matrix:
         EDITION: [gnome-next]
+        KERNEL: [linux618,linux70]
         BRANCH: [unstable]
-        SCOPE: [full, minimal]
+        SCOPE: [full]
     steps:
       - 
         uses: styfle/cancel-workflow-action@0.9.0
@@ -45,7 +46,7 @@ jobs:
           branch: ${{ matrix.branch }}
           scope: ${{ matrix.scope }}
           version: ${{ steps.time.outputs.time }}-development
-          kernel: linux618
+          kernel: ${{ matrix.kernel }}
           code-name: "Nightly-Build"
           release-tag: ${{ needs.prepare-release.outputs.release_tag }}
       -
