@@ -25,7 +25,7 @@ jobs:
     strategy:
       matrix:
         EDITION: [gnome-next]
-        KERNEL: [linux618,linux70]
+        KERNEL: [linux618,linux71]
         BRANCH: [unstable]
         SCOPE: [full]
     steps:
