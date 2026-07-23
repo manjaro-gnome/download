@@ -2,11 +2,11 @@ name: iso_build
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '30 2 * * *'
+    - cron:  '30 6 1 * *'
 
 jobs:
   prepare-release:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - 
         uses: styfle/cancel-workflow-action@0.13.1
@@ -20,7 +20,7 @@ jobs:
     outputs:
       release_tag: ${{ steps.time.outputs.time }}
   build-release:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs: [prepare-release]
     strategy:
       matrix:
