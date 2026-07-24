@@ -48,6 +48,7 @@ jobs:
           version: ${{ steps.time.outputs.time }}-development
           kernel: ${{ matrix.kernel }}
           code-name: "Nightly-Build"
+          build-mirror: "https://mirrors.manjaro.org/repo"
           release-tag: ${{ needs.prepare-release.outputs.release_tag }}
       -
         name: rollback
