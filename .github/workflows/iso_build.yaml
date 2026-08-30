@@ -6,21 +6,20 @@ on:
 
 jobs:
   prepare-release:
-    runs-on: ubuntu-26.04
+    runs-on: ubuntu-24.04
     steps:
       - 
         uses: styfle/cancel-workflow-action@0.13.1
         with:
           access_token: ${{ github.token }}
-      - 
-        id: time
+      - id: time
         uses: nanzm/get-time-action@v2.0
         with:
           format: 'YYYYMMDDHHmm'
     outputs:
       release_tag: ${{ steps.time.outputs.time }}
   build-release:
-    runs-on: ubuntu-26.04
+    runs-on: ubuntu-24.04
     needs: [prepare-release]
     strategy:
       matrix:
