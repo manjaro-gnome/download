@@ -6,16 +6,17 @@ on:
 
 jobs:
   prepare-release:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
-      - 
+      -
         uses: styfle/cancel-workflow-action@0.13.1
         with:
           access_token: ${{ github.token }}
-      - id: time
+      -
+        id: time
         uses: nanzm/get-time-action@v2.0
         with:
-          format: 'YYYYMMDDHHmm'
+          format: 'YYYY-MM-DD HH:mm'
     outputs:
       release_tag: ${{ steps.time.outputs.time }}
   build-release:
@@ -28,15 +29,15 @@ jobs:
         BRANCH: [unstable]
         SCOPE: [full]
     steps:
-      - 
+      -
         uses: styfle/cancel-workflow-action@0.13.1
         with:
           access_token: ${{ github.token }}
-      - 
+      -
         id: time
         uses: nanzm/get-time-action@v2.0
         with:
-          format: 'YY.MM'   
+          format: 'YY.MM'
       -
         name: image-build-upload
         uses: manjaro/manjaro-iso-action@main
