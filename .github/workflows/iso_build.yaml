@@ -16,7 +16,7 @@ jobs:
         id: time
         uses: nanzm/get-time-action@v2.0
         with:
-          format: 'YYYY-MM-DD HH:mm'
+          format: 'YYYY-MM-DD-HH-mm'
     outputs:
       release_tag: ${{ steps.time.outputs.time }}
   build-release:
@@ -37,7 +37,7 @@ jobs:
         id: time
         uses: nanzm/get-time-action@v2.0
         with:
-          format: 'YY.MM'
+          format: 'YY-MM'
       -
         name: image-build-upload
         uses: manjaro/manjaro-iso-action@main
